@@ -13,6 +13,8 @@
 		E871FB4B1CDE74D9009EA45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E871FB491CDE74D9009EA45B /* Main.storyboard */; };
 		E871FB4D1CDE74D9009EA45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E871FB4C1CDE74D9009EA45B /* Assets.xcassets */; };
 		E871FB501CDE74D9009EA45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E871FB4E1CDE74D9009EA45B /* LaunchScreen.storyboard */; };
+		E871FB581CDE77E4009EA45B /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871FB571CDE77E4009EA45B /* DataModel.swift */; };
+		E871FB5A1CDE78B0009EA45B /* MyUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871FB591CDE78B0009EA45B /* MyUITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E871FB4C1CDE74D9009EA45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E871FB4F1CDE74D9009EA45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E871FB511CDE74D9009EA45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E871FB571CDE77E4009EA45B /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E871FB591CDE78B0009EA45B /* MyUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUITableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				E871FB431CDE74D9009EA45B /* AppDelegate.swift */,
+				E871FB591CDE78B0009EA45B /* MyUITableViewCell.swift */,
 				E871FB451CDE74D9009EA45B /* FirstViewController.swift */,
 				E871FB471CDE74D9009EA45B /* SecondViewController.swift */,
+				E871FB571CDE77E4009EA45B /* DataModel.swift */,
 				E871FB491CDE74D9009EA45B /* Main.storyboard */,
 				E871FB4C1CDE74D9009EA45B /* Assets.xcassets */,
 				E871FB4E1CDE74D9009EA45B /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E871FB481CDE74D9009EA45B /* SecondViewController.swift in Sources */,
+				E871FB581CDE77E4009EA45B /* DataModel.swift in Sources */,
 				E871FB441CDE74D9009EA45B /* AppDelegate.swift in Sources */,
 				E871FB461CDE74D9009EA45B /* FirstViewController.swift in Sources */,
+				E871FB5A1CDE78B0009EA45B /* MyUITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
