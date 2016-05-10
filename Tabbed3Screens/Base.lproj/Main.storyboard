@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Tabbed3Screens" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,13 +109,13 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cr1-8i-Zyr" secondAttribute="bottom" constant="8" id="u3Z-wz-XBh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="778" y="260"/>
         </scene>
-        <!--Second-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Tabbed3Screens" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,13 +219,13 @@
                             <constraint firstItem="yuE-wd-113" firstAttribute="trailing" secondItem="S4u-1y-DmY" secondAttribute="trailing" id="tf2-P4-Iyb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="402" y="1094"/>
         </scene>
-        <!--third-->
+        <!--View Controller-->
         <scene sceneID="Uny-QJ-5X9">
             <objects>
                 <viewController id="Tqs-aq-EfC" sceneMemberID="viewController">
@@ -237,16 +237,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="third View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-Qy-E2h">
-                                <rect key="frame" x="185" y="192" width="236" height="74"/>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" text="DebugConsole:  Write stuff to yourself of the user during project run. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-b8-1cF">
+                                <rect key="frame" x="20" y="252" width="550" height="272"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Tag Line that Puts your project into a nutshell phrase." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-iu-Sc6">
+                                <rect key="frame" x="20" y="184" width="550" height="47"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="lbV-6s-jWZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cool Project Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-Qy-E2h">
+                                <rect key="frame" x="20" y="28" width="550" height="141"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="qvC-eV-qy0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mZ0-iu-Sc6" firstAttribute="top" secondItem="Esi-Qy-E2h" secondAttribute="bottom" constant="15" id="HIf-CV-imZ"/>
+                            <constraint firstItem="uO2-b8-1cF" firstAttribute="top" secondItem="mZ0-iu-Sc6" secondAttribute="bottom" constant="21" id="I5d-Ju-BAy"/>
+                            <constraint firstItem="JDz-ul-eSF" firstAttribute="top" secondItem="uO2-b8-1cF" secondAttribute="bottom" constant="27" id="UzQ-v5-BBR"/>
+                            <constraint firstItem="mZ0-iu-Sc6" firstAttribute="trailing" secondItem="uO2-b8-1cF" secondAttribute="trailing" id="W4j-nZ-Dhe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Esi-Qy-E2h" secondAttribute="trailing" constant="10" id="Zjt-ie-ahX"/>
+                            <constraint firstItem="Esi-Qy-E2h" firstAttribute="leading" secondItem="mZ0-iu-Sc6" secondAttribute="leading" id="bBH-mr-u1g"/>
+                            <constraint firstItem="Esi-Qy-E2h" firstAttribute="top" secondItem="9j3-hB-eYr" secondAttribute="bottom" constant="8" symbolic="YES" id="g1S-YK-lzU"/>
+                            <constraint firstItem="mZ0-iu-Sc6" firstAttribute="leading" secondItem="uO2-b8-1cF" secondAttribute="leading" id="nU4-pm-Izk"/>
+                            <constraint firstItem="Esi-Qy-E2h" firstAttribute="trailing" secondItem="mZ0-iu-Sc6" secondAttribute="trailing" id="wJF-IJ-JIY"/>
+                            <constraint firstItem="Esi-Qy-E2h" firstAttribute="leading" secondItem="h80-DQ-0Ms" secondAttribute="leadingMargin" id="wgy-pa-h8L"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="third" image="first" id="RYv-DJ-8hn"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="RYv-DJ-8hn"/>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="show" id="595-0t-gvY"/>
                     </connections>
@@ -276,8 +309,4 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
-    </resources>
 </document>

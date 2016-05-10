@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+//Vanity Variables
+
+
 let wordsDataSet = ["salt","sugar","water","coffee", "beer", "Bread", "Rice", "spicy hot", "rare", "extra crispy", "Thank You", "It is very tasty", "Can you repeat that slowly", "I feel very sick", "Bathrooms", "Woman''s Bathroom", "Men''s Bathroom"  ]
 
 var globalWordLangFlag =  ("en-US",  "English", "United States", "American English","🇺🇸")
