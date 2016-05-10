@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
+
+//  Global Class-Wide Variables
+let mySpeechSynth = AVSpeechSynthesizer()
+
+var myRate: Float = 0.50
+var myPitch: Float = 0.99
+var myVolume: Float = 0.50
+
+
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

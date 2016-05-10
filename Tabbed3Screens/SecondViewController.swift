@@ -10,20 +10,6 @@ import UIKit
 import AVFoundation
 
 
-//  Global Class-Wide Variables
-let mySpeechSynth = AVSpeechSynthesizer()
-
-var myRate: Float = 0.50
-var myPitch: Float = 0.99
-var myVolume: Float = 0.50
-
-// from :http://www.geonames.de/languages.html , http://www.omniglot.com/language/names.htm , http://wpcentral.io/internationalization/
-// current lang array has known typos, to fix in future.
-
-var currentLang = ("en-US", "English","United States","American English ","🇺🇸")
-
-
-
 
 
 
@@ -47,19 +33,18 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func rateSliderMoved(sender: UISlider) {
         rateNumLabel.text =  String(sender.value)
         myRate = sender.value
-        speakThisString()
-        
+        speakThisString(theWord, inLangCode: currentLang.0)
     }
     
     @IBAction func pitchSliderMoved(sender: UISlider) {
         pitchNumLabel.text = String(sender.value)
         myPitch = sender.value
-        speakThisString()
+        speakThisString(theWord, inLangCode: currentLang.0)
     }
     
     
     @IBAction func speakButtonPressed(sender: UIButton) {
-        speakThisString()
+        speakThisString(theWord, inLangCode: currentLang.0)
         
     }
     
@@ -91,7 +76,7 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        let myString = "\(langCodeAll38[row].4) \(langCodeAll38[row].3)"
+        let myString = "\(langCodeAll38[row].3)  \(langCodeAll38[row].4)  \(langCodeAll38[row].1)"
         
         return myString
     }
@@ -100,15 +85,17 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         currentLang = langCodeAll38[row]
         globalSelectedWordLangFlag = currentLang
         
-        speakThisString()
+//        speakThisString("\(langCodeAll38[row].4)", )
+  
+        speakThisString(langCodeAll38[row].3, inLangCode: langCodeAll38[row].0)
     }
    
     
-    func speakThisString(){
+    func speakThisString(passedString: String, inLangCode: String){
         
         mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
         
-        let myUtterance = AVSpeechUtterance(string: currentLang.3)
+        let myUtterance = AVSpeechUtterance(string: passedString)
         myUtterance.rate = myRate
         myUtterance.pitchMultiplier = myPitch
         //    myUtterance.volume = myVolume

@@ -10,12 +10,21 @@ import Foundation
 
 
 
+// from :http://www.geonames.de/languages.html , http://www.omniglot.com/language/names.htm , http://wpcentral.io/internationalization/
+// current lang array has known typos, to fix in future.
+
+var currentLang = ("en-US", "English","United States","American English ","🇺🇸")
+
+
+
+
+
 
 
 //Vanity Variables
 
 
-let wordsDataSet = ["salt","sugar","water","coffee", "beer", "Bread", "Rice", "spicy hot", "rare", "extra crispy", "Thank You", "It is very tasty", "Can you repeat that slowly", "I feel very sick", "Bathrooms", "Woman''s Bathroom", "Men''s Bathroom"  ]
+let wordsDataSet = ["Salt","Sugar","Water","Coffee", "Beer", "Bread", "Rice", "Spicy Hot", "Rare", "Extra Crispy", "Thank You", "It is very tasty", "Can you repeat that slowly", "Bathrooms", "Woman''s Bathroom", "Men''s Bathroom"  ]
 
 var globalWordLangFlag =  ("en-US",  "English", "United States", "American English","🇺🇸")
 var globalSelectedWordLangFlag = ("en-US",  "English", "United States", "American English","🇺🇸")
@@ -24,45 +33,83 @@ var theWord = "theWord"
 
 
 let  langCodeAll38 = [
-    ("en-US",  "English", "United States", "American English","🇺🇸"),
     
-    ("cs-CZ", "Czech", "Czech Republic","český","🇨🇿"),
-    ("da-DK", "Danish","Denmark","Dansk","🇩🇰"),
-    ("de-DE",       "German", "Germany", "Deutsche","🇩🇪"),
-    ("el-GR",      "Modern Greek",        "Greece","ελληνική","🇬🇷"),
+    // English
+    ("en-US",  "English", "United States", "American English","🇺🇸"),
     ("en-AU",     "English",     "Australia","Aussie","🇦🇺"),
     ("en-GB",     "English",     "United Kingdom", "Queen's English","🇬🇧"),
     ("en-IE",      "English",     "Ireland", "Gaeilge","🇮🇪"),
     ("en-ZA",       "English",     "South Africa", "South African English","🇿🇦"),
-    ("es-ES",       "Spanish",     "Spain", "Español","🇪🇸"),
-    ("es-MX",       "Spanish",     "Mexico", "Español de México","🇲🇽"),
-    ("fi-FI",       "Finnish",     "Finland","Suomi","🇫🇮"),
+    
+    
+    //French
     ("fr-CA",       "French",      "Canada","Français du Canada","🇨🇦" ),
     ("fr-FR",       "French",      "France", "Français","🇫🇷"),
-    ("he-IL",       "Hebrew",      "Israel","עברית","🇮🇱"),
-    ("hi-IN",       "Hindi",       "India", "हिन्दी","🇮🇳"),
-    ("hu-HU",       "Hungarian",    "Hungary", "Magyar","🇭🇺"),
-    ("id-ID",       "Indonesian",    "Indonesia","Bahasa Indonesia","🇮🇩"),
-    ("it-IT",       "Italian",     "Italy", "Italiano","🇮🇹"),
-    ("ja-JP",       "Japanese",     "Japan", "日本語","🇯🇵"),
-    ("ko-KR",       "Korean",      "Republic of Korea", "한국어","🇰🇷"),
-    ("nl-BE",       "Dutch",       "Belgium","Nederlandse","🇧🇪"),
-    ("nl-NL",       "Dutch",       "Netherlands", "Nederlands","🇳🇱"),
-    ("no-NO",       "Norwegian",    "Norway", "Norsk","🇳🇴"),
-    ("pl-PL",       "Polish",      "Poland", "Polski","🇵🇱"),
-    ("pt-BR",       "Portuguese",      "Brazil","Portuguese","🇧🇷"),
-    ("pt-PT",       "Portuguese",      "Portugal","Portuguese","🇵🇹"),
-    ("ro-RO",       "Romanian",        "Romania","Română","🇷🇴"),
-    ("ru-RU",       "Russian",     "Russian Federation","русский","🇷🇺"),
-    ("sk-SK",       "Slovak",      "Slovakia", "Slovenčina","🇸🇰"),
-    ("sv-SE",       "Swedish",     "Sweden","Svenska","🇸🇪"),
-    ("th-TH",       "Thai",        "Thailand","ภาษาไทย","🇹🇭"),
-    ("tr-TR",       "Turkish",     "Turkey","Türkçe","🇹🇷"),
+    
+    //Spanish
+    ("es-ES",       "Spanish",     "Spain", "Español","🇪🇸"),
+    ("es-MX",       "Spanish",     "Mexico", "Español de México","🇲🇽"),
+
+    // Chinese
     ("zh-CN",       "Chinese",     "China","漢語/汉语","🇨🇳"),
     ("zh-HK",       "Chinese",   "Hong Kong","漢語/汉语","🇭🇰"),
     ("zh-TW",       "Chinese",     "Taiwan","漢語/汉语","🇹🇼"),
-    ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦")
+    
+    // Pacific Rim
+    ("ja-JP",       "Japanese",     "Japan", "日本語","🇯🇵"),
+    ("ko-KR",       "Korean",      "Republic of Korea", "한국어","🇰🇷"),
+    ("id-ID",       "Indonesian",    "Indonesia", "Bahasa Indonesia","🇮🇩"),
+    ("th-TH",       "Thai",        "Thailand","ภาษาไทย","🇹🇭"),
+
+
+    
+    // North Europe
+    ("sv-SE",       "Swedish",     "Sweden","Svenska","🇸🇪"),
+    ("fi-FI",       "Finnish",     "Finland","Suomi","🇫🇮"),
+    ("no-NO",       "Norwegian",    "Norway", "Norsk","🇳🇴"),
+    
+    // Europe
+    ("de-DE",       "German", "Germany", "Deutsche","🇩🇪"),
+    ("el-GR",      "Modern Greek",        "Greece","ελληνική","🇬🇷"),
+    ("it-IT",       "Italian",     "Italy", "Italiano","🇮🇹"),
+
+    
+    //South & East Euro
+    
+    ("ru-RU",       "Russian",     "Russian Federation","русский","🇷🇺"),
+    ("cs-CZ", "Czech", "Czech Republic","český","🇨🇿"),
+    ("sk-SK",       "Slovak",      "Slovakia", "Slovenčina","🇸🇰"),
+    ("pl-PL",       "Polish",      "Poland", "Polski","🇵🇱"),
+    
+   
+
+    
+    ("ro-RO",       "Romanian",        "Romania","Română","🇷🇴"),
+    ("hu-HU",       "Hungarian",    "Hungary", "Magyar","🇭🇺"),
+    
+    ("tr-TR",       "Turkish",     "Turkey","Türkçe","🇹🇷"),
+    
+    
+    
+    //East & Middle East
+    ("hi-IN",       "Hindi",       "India", "हिन्दी","🇮🇳"),
+    ("he-IL",       "Hebrew",      "Israel","עברית","🇮🇱"),
+    ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦"),
+    
+    
+    // Portuguese
+    ("pt-BR",       "Portuguese",      "Brazil","Portuguese","🇧🇷"),
+    ("pt-PT",       "Portuguese",      "Portugal","Portuguese","🇵🇹"),
+   
+    //Dutch
+    ("nl-BE",       "Dutch",       "Belgium","Nederlandse","🇧🇪"),
+    ("nl-NL",       "Dutch",       "Netherlands", "Nederlands","🇳🇱"),
+    ("da-DK", "Danish","Denmark","Dansk","🇩🇰"),
+    
+    
 ]
+
+
 
 var saltTuplesArray = [("en-US","salt"),("cs-CZ","sůl"),
                        ("da-DK","salt")
