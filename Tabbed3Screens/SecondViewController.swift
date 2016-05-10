@@ -23,7 +23,50 @@ var myVolume: Float = 0.50
 var currentLang = ("en-US", "English","United States","American English ","🇺🇸")
 
 
+
+
+
+
+
+
+
+
 class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    
+    // UI Elements [Outlets]
+    
+    @IBOutlet weak var rateNumLabel: UILabel!
+    @IBOutlet weak var pitchNumLabel: UILabel!
+    //  @IBOutlet weak var volumeNumLabel: UILabel!
+    @IBOutlet weak var speakButtonText: UIButton!
+    
+    
+    // UI Elements [Action]
+    
+    @IBAction func rateSliderMoved(sender: UISlider) {
+        rateNumLabel.text =  String(sender.value)
+        myRate = sender.value
+        speakThisString()
+        
+    }
+    
+    @IBAction func pitchSliderMoved(sender: UISlider) {
+        pitchNumLabel.text = String(sender.value)
+        myPitch = sender.value
+        speakThisString()
+    }
+    
+    
+    @IBAction func speakButtonPressed(sender: UIButton) {
+        speakThisString()
+        
+    }
+    
+    
+    
+    
+    
     
 
     override func viewDidLoad() {
