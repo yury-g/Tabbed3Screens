@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
-class SecondViewController: UIViewController {
+
+//  Global Class-Wide Variables
+let mySpeechSynth = AVSpeechSynthesizer()
+
+var myRate: Float = 0.50
+var myPitch: Float = 0.99
+var myVolume: Float = 0.50
+
+// from :http://www.geonames.de/languages.html , http://www.omniglot.com/language/names.htm , http://wpcentral.io/internationalization/
+// current lang array has known typos, to fix in future.
+
+var currentLang = ("en-US", "English","United States","American English ","🇺🇸")
+
+
+class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +36,48 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // MARK: - UIPickerView Methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return langCodeAll38.count
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let myString = "\(langCodeAll38[row].4) \(langCodeAll38[row].3)"
+        
+        return myString
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentLang = langCodeAll38[row]
+        globalSelectedWordLangFlag = currentLang
+        
+        speakThisString()
+    }
+   
+    
+    func speakThisString(){
+        
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
+        let myUtterance = AVSpeechUtterance(string: currentLang.3)
+        myUtterance.rate = myRate
+        myUtterance.pitchMultiplier = myPitch
+        //    myUtterance.volume = myVolume
+        myUtterance.voice = AVSpeechSynthesisVoice(language: currentLang.0)
+        mySpeechSynth.speakUtterance(myUtterance)
+        
+        
+        
+    }
+    
+    
+    
+    
 }
 
